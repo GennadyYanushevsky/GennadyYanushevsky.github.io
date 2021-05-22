@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form-styled</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/fontsicon.css" />
+
+    <style>
+      .title::before {
+        content: "\e900";
+        display: block;
+        color: #fff;
+        font-family: "icomoon";
+        position: relative;
+        top: 30px;
+        left: -120px;
+      }
+      .icon-message {
+        background-position: -16px -51px;
+      }
+      .icon-phone {
+        background-position: -32px -51px;
+      }
+      .icon-email {
+        background-position: -16px 1px;
+      }
+      .icon-name {
+        background-position: -16px -31px;
+      }
+
+      .icons {
+        background-image: url(../icons/sprite.png);
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        left: 5px;
+        top: 25px;
+      }
+
+      .form-group-ver .form-group {
+        margin-bottom: 10px;
+        position: relative;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .btn {
+        background-color: #6499ff;
+        margin-left: 155px;
+        margin-bottom: 15px;
+        color: white;
+        border-radius: 5px;
+        padding: 5px 25px;
+        font-size: 14px;
+      }
+      h2 {
+        text-align: center;
+        color: white;
+        padding: 5px;
+        margin-top: -0.5px;
+        padding-bottom: 20px;
+        padding-left: 40px;
+      }
+      .form__title {
+        background-color: #6499ff;
+      }
+      .label-group {
+        margin-left: 15px;
+      }
+      .form-group-ver .input-group {
+        width: 100%;
+        padding: 1%;
+        display: block;
+        border-radius: 5px;
+        padding-left: 25px;
+      }
+      .inner {
+        width: 420px;
+        margin: 0 auto;
+      }
+      form {
+        border: 2px solid #6499ff;
+        max-width: 500px;
+        min-width: 320px;
+        margin: 3% auto;
+        border-radius: 2%;
+      }
+      .textarea-message {
+        resize: vertical;
+        min-height: 80px;
+        max-height: 200px;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+        font-family: "Roboto Mono", monospace;
+      }
+      .form-group-mobile .input-group {
+        display: inline-block;
+        width: 55%;
+      }
+
+      .form-group-mobile .label-name {
+        margin-right: 73px;
+      }
+      .form-group-mobile .label-email {
+        margin-right: 53px;
+      }
+      .form-group-mobile .label-phone {
+        margin-right: 34px;
+      }
+      .form-group-mobile .textarea-message {
+        display: inline-block;
+        width: 100%;
+      }
+      .form-group-mobile .icons {
+        left: 140px;
+        top: 5px;
+      }
+      .form-group-mobile .icon-message {
+        left: 5px;
+        top: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--  допсиать класс form-group-mobile для мобильной версии формы-->
+    <form class="form-group-ver">
+      <div class="form-group">
+        <div class="form__title">
+          <h2 class="title">Обратная связь</h2>
+        </div>
+      </div>
+      <div class="inner">
+        <div class="form-group">
+          <label for="name" class="label-group label-name">Имя:</label>
+          <div class="icons icon-name"></div>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="input-group input-name"
+            placeholder="Введите Ваше имя"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email" class="label-group label-email">Email:</label>
+          <div class="icons icon-email"></div>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="input-group input-email"
+            placeholder="Введите адрес Вашей почты"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone" class="label-group label-phone">Телефон:</label>
+          <div class="icons icon-phone"></div>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="input-group input-phone"
+            placeholder="Введите номер телефона"
+          />
+        </div>
+        <div class="form-group">
+          <label for="message" class="label-group label-message"
+            >Сообщение:</label
+          >
+          <div class="icons icon-message"></div>
+          <textarea
+            cols="30"
+            rows="3"
+            id="message"
+            name="message"
+            class="input-group textarea-message"
+            placeholder="Текст сообщения"
+          ></textarea>
+        </div>
+        <div class="form-button">
+          <button class="btn">Отправить</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

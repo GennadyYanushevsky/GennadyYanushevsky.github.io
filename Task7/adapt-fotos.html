@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>adapt-fotos</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .photo-wall ul li {
+        list-style: none;
+        float: left;
+        width: 31.333%;
+        margin: 1%;
+      }
+      .photo-wall ul {
+        padding: 0;
+      }
+
+      .photo-wall ul li img {
+        width: 100%;
+      }
+
+      h3 {
+        text-align: center;
+      }
+      .photo-wall {
+        max-width: 980px;
+        min-width: 320px;
+        margin: 0 auto;
+      }
+      .empty-box {
+        clear: both;
+      }
+
+      @media all and (max-width: 767px) {
+        .container ul li {
+          width: 48%;
+        }
+      }
+
+      @media all and (max-width: 479px) {
+        .container ul li {
+          width: 98%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Адаптивная вёрстка галереи</h3>
+      <section class="photo-wall">
+        <ul>
+          <li><img src="../images/nature1.jpg" alt="nature1" /></li>
+          <li><img src="../images/nature2.jpg" alt="nature2" /></li>
+          <li><img src="../images/nature3.jpg" alt="nature3" /></li>
+          <li><img src="../images/nature4.jpg" alt="nature4" /></li>
+          <li><img src="../images/nature5.jpg" alt="nature5" /></li>
+          <li><img src="../images/nature6.jpg" alt="nature6" /></li>
+          <li><img src="../images/nature7.jpg" alt="nature7" /></li>
+          <li><img src="../images/nature8.jpg" alt="nature8" /></li>
+          <li><img src="../images/nature9.jpg" alt="nature9" /></li>
+        </ul>
+        <div class="empty-box"></div>
+      </section>
+    </div>
+  </body>
+</html>

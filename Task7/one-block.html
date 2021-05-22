@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>one-block</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: cyan;
+      }
+      .one-block {
+        padding: 200px;
+        width: 0px;
+        max-width: 400px;
+        background-color: yellow;
+        margin: 50px auto;
+      }
+      @media all and (max-width: 1279px) {
+        .one-block {
+          background-color: red;
+        }
+      }
+      @media all and (max-width: 1023px) {
+        .one-block {
+          border-radius: 15%;
+        }
+      }
+      @media all and (max-width: 767px) {
+        .one-block {
+          background-color: yellow;
+        }
+      }
+      @media all and (max-width: 639px) {
+        .one-block {
+          border-radius: 15%;
+          padding: 198px;
+          border: solid 2px red;
+        }
+      }
+      @media all and (max-width: 479px) {
+        .one-block {
+          border-radius: 50%;
+        }
+      }
+      @media all and (max-width: 319px) {
+        .one-block {
+          width: 100%;
+          border: none;
+          border-radius: 0;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one-block"></div>
+  </body>
+</html>

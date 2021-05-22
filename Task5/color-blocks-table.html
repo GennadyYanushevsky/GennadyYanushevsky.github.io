@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>color-blocks-table</title>
+    <style>
+      .box {
+        height: 25vh;
+        width: 100vw;
+        padding: 0;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+
+        width: 50vw;
+      }
+      .blue {
+        background-color: blue;
+
+        width: 50vw;
+      }
+      .orange {
+        background-color: orange;
+        width: 33vw;
+      }
+
+      .purple {
+        background-color: purple;
+
+        width: 34vw;
+      }
+      .red {
+        background-color: red;
+
+        width: 33vw;
+      }
+
+      .cyan {
+        background-color: cyan;
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="6" class="box yellow"></td>
+      </tr>
+      <tr>
+        <td colspan="3" class="box green"></td>
+        <td colspan="3" class="box blue"></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="box orange"></td>
+        <td colspan="2" class="box purple"></td>
+        <td colspan="2" class="box red"></td>
+      </tr>
+      <tr>
+        <td colspan="6" class="box cyan"></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examples-of-blocks</title>
+    <style>
+        .main {
+            width: 800px;
+            height: 800px;
+            border: solid 2px black;
+            margin: 5% auto;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+        .yellow {
+            background-color: yellow;
+            position: static;
+            bottom: 300px;
+            left: 300px;
+        }
+        .red {
+            background-color: red;
+           position: relative;
+            top: 40px;
+            left: 30px;
+        }
+
+        .blue {
+            background-color: blue;
+            position: absolute;
+            bottom: 100px;
+            left: 300px;
+
+        }
+        .green {
+            background-color: green;
+            position: sticky;
+            top: 200px;
+            right: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+<div class="box yellow"></div>
+<div class="box red"></div>
+<div class="box blue"></div>
+<div class="box green"></div>
+    </div>
+</body>
+</html>

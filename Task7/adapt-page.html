@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>adapt-page</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .news__button {
+        background-color: #68a4c4;
+        padding: 10px 0;
+      }
+      .news__button:hover {
+        background-color: #c2c2c2;
+      }
+
+      .news__button a {
+        text-decoration: none;
+        color: white;
+        padding: 11px 55px;
+      }
+
+      .news__list li ~ li {
+        margin-left: 5%;
+      }
+      .news__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        min-height: 200px;
+      }
+      .news__item {
+        width: 21%;
+        float: left;
+      }
+      .header__pic img {
+        width: 100%;
+        margin-bottom: -4px;
+      }
+
+      .header__pic {
+        max-width: 980px;
+        object-fit: cover;
+      }
+
+      .header__title {
+        background-color: #c2c2c2;
+      }
+
+      .title {
+        text-align: center;
+        padding: 20px 0;
+        margin: 0;
+      }
+      .container {
+        min-width: 320px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+      .footer {
+        background-color: #68a4c4;
+        color: white;
+        padding: 10px 0;
+      }
+      .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      @media all and (max-width: 768px) {
+        .container {
+          min-width: 320px;
+        }
+
+        .news__item {
+          float: none;
+          width: 100%;
+        }
+        .news__list li ~ li {
+          margin-left: 0;
+        }
+      }
+      body {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__pic">
+          <img src="../images/animal-dog.jpg" alt="dog" title="dog" />
+        </div>
+      </div>
+      <div class="header__title">
+        <div class="container">
+          <h1 class="title">Произвольный текст</h1>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="row__news">
+        <div class="container">
+          <ul class="news__list">
+            <li class="news__item">
+              <h3>Новость1</h3>
+              <p class="news__text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Similique, vitae!
+              </p>
+              <div class="news__button"><a href="#">Читать далее</a></div>
+            </li>
+            <li class="news__item">
+              <h3>Новость2</h3>
+              <p class="news__text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Similique, vitae!
+              </p>
+              <div class="news__button"><a href="#">Читать далее</a></div>
+            </li>
+            <li class="news__item">
+              <h3>Новость3</h3>
+              <p class="news__text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Similique, vitae!
+              </p>
+              <div class="news__button"><a href="#">Читать далее</a></div>
+            </li>
+            <li class="news__item">
+              <h3>Новость4</h3>
+              <p class="news__text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Similique, vitae!
+              </p>
+              <div class="news__button"><a href="#">Читать далее</a></div>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </section>
+      <section class="main-text">
+        <div class="container">
+          <div class="main-text__item">
+            <h2 class="main-text__subtitle">Что такое Lorem Ipsum</h2>
+            <p class="text">
+              Рыбный текст – это текст, выполняющий исключительно утилитарную
+              функцию. Он не вписывается в контекст сайта, на котором
+              используется, и нужен только для заполнения пространства. Зачастую
+              такой текст даже не имеет четкого смысла и представляет собой
+              набор слов и фраз, которые вроде бы формируют грамматически верные
+              конструкции, но какой-либо мысли в них не прослеживается. Рыбу
+              используют вебмастера, веб-дизайнеры и разработчики, у которых нет
+              под рукой готового текста, но нужно как-то оценить внешний вид
+              контента на готовой странице. Оценить, насколько хорошо он
+              вписывается в дизайн и не «плывет» ли верстка.
+            </p>
+          </div>
+          <div class="main-text__item">
+            <h2 class="main-text__subtitle">Почему он используется?</h2>
+            <p class="text">
+              Вы можете спросить, почему дизайнер предпочитает использовать
+              текст lorem ipsum вместо нескольких абзацев на английском или на
+              родном языке. Почему бы просто не скопировать и вставить страницу
+              из старой книги или чего-то еще? Основная причина этого состоит в
+              том, чтобы не дать людям сосредоточиться на реальном тексте. Когда
+              кто-то создает шаблон (или использует бесплатный шаблон сайта)
+            </p>
+          </div>
+          <div class="main-text__item">
+            <h2 class="main-text__subtitle">Откуда он появился?</h2>
+            <p class="text">
+              Хотя текст lorem ipsum выглядит как бред, на самом деле он
+              укоренен в настоящей работе на латыни. Это происходит из работы
+              Цицерона в 45 г. до н.э. «De finibus bonorum et malorum» (О концах
+              добра и зла), в которой рассматривается этика. Текст lorem ipsum
+              взят из разделов 1.10.32 и 1.10.33. Однако общий текст lorem
+              ipsum, который мы используем сегодня, не является правильным
+              латинским. По сравнению с работой Цицерона, наш текст lorem ipsum
+              является полным бредом. В него были добавлены, удалены и изменены
+              слова, которые делают его далеким от первоначальной формы. Д-р
+              Ричард МакКлинток обнаружил источник текста при поиске редкого
+              латинского слова «consectetur» в классической литературе. Его
+              поиски нашли работу Цицерона. Неизвестно, кто сделал эти изменения
+              в тексте, или когда именно, чтобы сделать это путаницей слов,
+              которые мы знаем сегодня. Когда-то в 1500-х годах, неизвестный
+              принтер зашифровал слова, которые выжили в эпоху цифровых
+              технологий.
+            </p>
+          </div>
+          <div class="main-text__item">
+            <h2 class="main-text__subtitle">Где его взять?</h2>
+            <p class="text">
+              Этот сайт дает вам еще несколько вариантов создания текста lorem
+              ipsum; это особенно полезно, если вы хотите создать аналогичный
+              текст на других языках. Выберите Другие языки / кодировки коробка
+              для изменения на различные скрипты и даже некоторые искусственные
+              языки. Помимо этого, установите количество абзацев или ограничение
+              на количество слов, затем нажмите генерировать или же Скачать,
+              Стоит упомянуть родственную страницу Unsquiggledlipsum.com, на
+              которую ссылается этот сайт. Этот инструмент генерирует текст
+              lorem ipsum, который не вызовет проверку правописания в браузере,
+              текстовом редакторе или аналогичном инструменте и, таким образом,
+              повсюду показывает красные подчеркивания.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <p>&copy;Копирайт 2021</p>
+      </div>
+    </footer>
+  </body>
+</html>

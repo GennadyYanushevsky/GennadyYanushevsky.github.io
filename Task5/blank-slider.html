@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blank-slider</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+      }
+
+      .header {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 400;
+        margin-bottom: 50px;
+      }
+
+      .container {
+        background-color: #000;
+      }
+
+      .slider {
+        width: 1200px;
+        max-height: 425px;
+        margin: 0 auto;
+
+        position: relative;
+      }
+
+      .slider__item {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .slider__content {
+        color: #fff;
+        text-align: center;
+        position: relative;
+      }
+
+      .title h2 {
+        border-top: 2px solid white;
+      }
+
+      .title {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .title h2 {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 70px;
+        border-bottom: 2px solid white;
+      }
+
+      .slider__text {
+        max-width: 500px;
+        margin: 0 auto;
+        position: absolute;
+        top: 110px;
+        left: 404px;
+      }
+
+      .slider-left-arrow {
+        width: 90px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .slider-right-arrow {
+        width: 90px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .arrow {
+        width: 30px;
+        height: 56px;
+        background: url(../images/prev-next-sprite.png) no-repeat;
+      }
+
+      .left-arrow {
+        background-position: 0 0;
+        position: absolute;
+        top: 184.5px;
+        left: 30px;
+      }
+
+      .right-arrow {
+        background-position: -40px 0;
+        position: absolute;
+        top: 184.5px;
+        right: 30px;
+      }
+
+      .slider__dots {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        text-align: center;
+      }
+
+      .slider__dots ul {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        display: inline-block;
+      }
+
+      .slider__dots li {
+        background-color: #fff;
+        list-style: none;
+        display: inline-block;
+      }
+
+      .slider__dots li + li {
+        margin-left: 10px;
+      }
+
+      .slider__dot-link {
+        display: block;
+        padding: 5px;
+      }
+
+      .slider__dot-link:hover {
+        background-color: orange;
+      }
+
+      .slider-right-arrow:hover,
+      .slider-left-arrow:hover {
+        background-color: rgba(172, 171, 171, 0.274);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <p>Вёрстка заготовки для слайдера</p>
+    </header>
+    <div class="container">
+      <div class="slider">
+        <div class="slider__item">
+          <div class="slider__content">
+            <div class="slider__img">
+              <img src="../images/slider-img-01.jpg" alt="Slider" />
+            </div>
+            <div class="slider__text">
+              <div class="title">
+                <h2>Комфортная одежда</h2>
+              </div>
+              <p class="text">для всех видов спорта</p>
+            </div>
+          </div>
+        </div>
+        <div class="slider-left-arrow">
+          <div class="arrow left-arrow"></div>
+        </div>
+        <div class="slider-right-arrow">
+          <div class="arrow right-arrow"></div>
+        </div>
+        <div class="slider__dots">
+          <ul>
+            <li><a class="slider__dot-link dots-active" href="#"></a></li>
+            <li><a class="slider__dot-link" href="#"></a></li>
+            <li><a class="slider__dot-link" href="#"></a></li>
+            <li><a class="slider__dot-link" href="#"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

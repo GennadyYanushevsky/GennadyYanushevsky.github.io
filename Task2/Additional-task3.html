@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Additional task 3</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <h1 style="text-align: center;">
+      Способы применения тегов &#60;figure&#62; и &#60;figcaption&#62;
+    </h1>
+    Тег <span style="font-weight: bold;">&#60;figure&#62; </span> используется
+    для группирования любых элементов, например, изображений и подписей к ним.
+    <span style="font-weight: bold;">&#60;figure&#62; </span> (от англ. figure —
+    рисунок, иллюстрация) не должен быть связан непосредственно с основным
+    содержимым документа и при его перемещении в другое место смысл текста
+    <span style="font-weight: bold;"> не должен меняться. </span> Обычно
+    применяется для иллюстраций, фрагментов кода, схем, графиков, диаграмм и др.
+    <br />
+    <p>
+      А тег <span style="font-weight: bold;">&#60;figcaption&#62;</span> содержит
+      описание для элемента
+      <span style="font-weight: bold;">&#60;figure&#62; </span>.
+      <span style="font-weight: bold;">&#60;figcaption&#62;</span> (от англ.
+      figure caption — подпись к рисунку) должен быть
+      <span style="text-transform: uppercase;">первым</span> или
+      <span style="text-transform: uppercase;">последним</span>
+      элементом в группе.
+    </p>
+    <p>
+      Рассмотрим примеры использования тега<span style="font-weight: bold;"
+        >&#60;figure&#62;
+      </span>
+      и <span style="font-weight: bold;">&#60;figcaption&#62;</span>
+    </p>
+    <figure style="text-align: center;">
+      <img
+        src="../Images/My-cat.jpg"
+        alt="Моя кошка"
+        title="Ксюша"
+        width="150"
+      />
+      <figcaption>Моя кошка</figcaption>
+      <figure style="text-align: left;">
+        <img src="../Images/Lamborghini.jpg" alt="Lamborghini" width="200" />
+        <br />
+        <img
+          src="../Images/Ferrari.jpg"
+          alt="Ferrari"
+          width="200"
+          title="Машины"
+        />
+        <br />
+        <img src="../Images/Bugatti.jpg" alt="Bugatti" width="200" />
+        <figcaption>Очень быстрые машины</figcaption>
+      </figure>
+    </figure>
+    <h2 style="text-align: center;">
+      Плюсы и минусы тегов &#60;figure&#62; и &#60;figcaption&#62;
+    </h2>
+    <p>
+      <span style="text-transform: uppercase;">плюсы</span> данных тегов
+      заключаются в том, что если нам нужно что-то объединить и оставить
+      какую-то подпись под картинкой - то данная картинка и подпись группируются
+      в отдельный блок. То есть находятся рядом. Даже если нам нужно будет
+      данный блок затем переместить или убрать - это будет применяться сразу ко
+      всему блоку и к &#60;figure&#62;, и к &#60;figcaption&#62;, что,
+      несомненно, удобно.
+    </p>
+    <p>
+      <span style="text-transform: uppercase;">минусы</span> - если мне нужно,
+      например, добавить описание и сверху картики, и снизу, то данный вариант
+      мне уже не подходит. Или если в блоке более, чем одна
+      фотография/картинка/диаграмма и каждая нуждается в подписи.
+    </p>
+  </body>
+</html>

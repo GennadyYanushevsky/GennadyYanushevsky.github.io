@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>form</title>
+    <style>
+      .row {
+        margin: 10px;
+      }
+      hr {
+        margin-top: 20px;
+      }
+      .container {
+        width: 500px;
+        margin: 0 auto;
+      }
+      .buttons {
+        width: 200px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <legend>Анкета нового пользователя</legend>
+          <div class="form-group row">
+            <lable for="first-name">Имя:</lable>
+            <input tabindex="1" type="text" name="first-name" id="first-name" />
+          </div>
+          <div class="form-group row">
+            <lable for="second-name">Фамилия:</lable>
+            <input
+              tabindex="2"
+              type="text"
+              name="second-name"
+              id="second-name"
+            />
+          </div>
+          <div class="form-group row">
+            <lable for="gender">Укажите пол:</lable>
+            мужской<input
+              tabindex="3"
+              type="radio"
+              name="gender"
+              value="male"
+            />
+            женский<input
+              tabindex="3"
+              type="radio"
+              name="gender"
+              value="female"
+            />
+          </div>
+          <div class="form-group row">
+            <label for="country">Страна проживания:</label>
+            <select tabindex="4" name="countries" id="country">
+              <option value="">Россия</option>
+              <option value="">Украина</option>
+              <option value="" selected>Беларусь</option>
+              <option value="">Литва</option>
+              <option value="">Латвия</option>
+              <option value="">Эстония</option>
+            </select>
+          </div>
+          <div class="form-group row">
+            <label for="language">Владение языками:</label>
+            <input tabindex="5" type="checkbox" name="language1" /> русский
+            <input tabindex="6" type="checkbox" name="language2" /> белорусский
+            <input tabindex="7" type="checkbox" name="language3" /> английский
+          </div>
+          <div class="form-group row">
+            <label for="photo">Фото профиля:</label>
+            <input tabindex="8" type="file" id="photo" />
+          </div>
+          <div class="form-group row">
+            <lable for="login">Введите логин:</lable>
+            <input tabindex="9" type="text" id="login" />
+          </div>
+          <div class="form-group row">
+            <label for="email">Введите email:</label>
+            <input tabindex="10" type="text" id="email" />
+          </div>
+          <div class="form-group row">
+            <label for="password">Введите пароль:</label>
+            <input tabindex="11" type="password" id="password" />
+          </div>
+          <div class="form-group row">
+            <label for="repeat-password">Повторите пароль:</label>
+            <input tabindex="12" type="password" id="repeat-password" />
+            <hr />
+            <div class="buttons">
+              <button type="submit" disabled>Отправить</button>
+              <button tabindex="13" type="reset">Отменить</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

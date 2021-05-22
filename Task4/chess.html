@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess</title>
+    <style>
+      .white-king {
+        background-position: 0px -48px;
+      }
+      .white-queen {
+        background-position: -48px -48px;
+      }
+      .white-bishop {
+        background-position: -144px -48px;
+      }
+      .white-knight {
+        background-position: -192px -48px;
+      }
+      .white-rook {
+        background-position: -96px -48px;
+      }
+      .white-pawn {
+        background-position: -240px -48px;
+      }
+      .black-pawn {
+        background-position: -240px 0px;
+      }
+      .black-king {
+        background-position: 0px 0px;
+      }
+      .black-queen {
+        background-position: -48px 0px;
+      }
+      .black-bishop {
+        background-position: -144px 1px;
+      }
+      .black-knight {
+        background-position: -192px 0px;
+      }
+      .black-rook {
+        background-position: -96px 0px;
+      }
+
+      .chessmen {
+        background-image: url(../images/chess.png);
+        background-repeat: no-repeat;
+      }
+      th {
+        padding: 0px 6px;
+      }
+      h1 {
+        text-align: center;
+      }
+      table {
+        background-color: white;
+        border: solid 1px rgba(0, 0, 0, 0.5);
+        margin: 0px auto;
+        border-collapse: collapse;
+       
+      }
+      .black {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .white {
+        background-color: white;
+    
+      }
+      td {
+        width: 48px;
+        height: 48px;
+        font-weight: bold;
+        border: solid 1px black;
+       
+            }
+      
+        
+
+      .background {
+        background-color: cyan;
+      }
+    </style>
+  </head>
+  <body class="background">
+    <h1>Шахматы</h1>
+    <div>
+      <table>
+        <tr>
+          <th></th>
+          <th>a</th>
+          <th>b</th>
+          <th>c</th>
+          <th>d</th>
+          <th>e</th>
+          <th>f</th>
+          <th>g</th>
+          <th>h</th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>8</th>
+          <td class="white chessmen black-rook"></td>
+          <td class="black chessmen black-knight"></td>
+          <td class="white chessmen black-bishop"></td>
+          <td class="black chessmen black-queen"></td>
+          <td class="white chessmen black-king"></td>
+          <td class="black chessmen black-bishop"></td>
+          <td class="white chessmen black-knight"></td>
+          <td class="black chessmen black-rook"></td>
+          <th>8</th>
+        </tr>
+        <tr>
+          <th>7</th>
+          <td class="black chessmen black-pawn"></td>
+          <td class="white chessmen black-pawn"></td>
+          <td class="black chessmen black-pawn"></td>
+          <td class="white chessmen black-pawn"></td>
+          <td class="black chessmen black-pawn"></td>
+          <td class="white chessmen black-pawn"></td>
+          <td class="black chessmen black-pawn"></td>
+          <td class="white chessmen black-pawn"></td>
+          <th>7</th>
+        </tr>
+        <tr>
+          <th>6</th>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <th>6</th>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <th>5</th>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <th>4</th>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <td class="black"></td>
+          <td class="white"></td>
+          <th>3</th>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td class="white chessmen white-pawn"></td>
+          <td class="black chessmen white-pawn"></td>
+          <td class="white chessmen white-pawn"></td>
+          <td class="black chessmen white-pawn"></td>
+          <td class="white chessmen white-pawn"></td>
+          <td class="black chessmen white-pawn"></td>
+          <td class="white chessmen white-pawn"></td>
+          <td class="black chessmen white-pawn"></td>
+          <th>2</th>
+        </tr>
+        <tr>
+          <th>1</th>
+          <td class="black chessmen white-rook"></td>
+          <td class="white chessmen white-knight"></td>
+          <td class="black chessmen white-bishop"></td>
+          <td class="white chessmen white-queen"></td>
+          <td class="black chessmen white-king"></td>
+          <td class="white chessmen white-bishop"></td>
+          <td class="black chessmen white-knight"></td>
+          <td class="white chessmen white-rook"></td>
+          <th>1</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>a</th>
+          <th>b</th>
+          <th>c</th>
+          <th>d</th>
+          <th>e</th>
+          <th>f</th>
+          <th>g</th>
+          <th>h</th>
+          <th></th>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
