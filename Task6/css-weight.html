@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weight of selectors</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        td, th {
+            padding: 15px;
+            border: 1px black solid;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        tr:first-child th,
+        td:last-of-type {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Вес селекторов</h2>
+
+    <p>Для удобства вычислений каждому селектору присвоено числовое значение, или вес.</p>
+    <table>
+        <tbody>
+            <tr>
+                <th>Тип селектора</th>
+                <th colspan="2">Вес селектора</th>
+            </tr>
+            <tr>
+                <th>Универсальный селектор</th>
+                <td>0.0.0.0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <th>Селекторы по тегу</th>
+                <td>0.0.0.1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th>Селекторы по классу<br>Селекторы по атрибутам<br>Селекторы псевдоклассов<br>Селекторы псевдоэлементов</th>
+                <td>0.0.1.0</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <th>Селекторы по идентификатору</th>
+                <td>0.1.0.0</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <th>Инлайновые стили</th>
+                <td>1.0.0.0</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <th>Комбинаторы (<code>+, &gt;, ~</code>)<br>Унаследованные стили</th>
+                <td>-</td>
+                <td>Не имеют веса</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+    Обратите внимание:<br>
+    - Универсальный селектор не имеет веса, т.е. весит <strong>0</strong>.<br>
+    - Комбинаторы в контекстных селекторах (<code>+, ~, ^,</code> пробел) - не имеют веса. Также не имеют веса правила, унаследованные от родителей.
+    </p>
+</body>
+</html>

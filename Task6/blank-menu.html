@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blank-menu2</title>
+    <style>
+      .empty-box {
+        clear: both;
+      }
+      .content {
+        display: block;
+        width: 1100px;
+        margin: 0 auto;
+      }
+      .sprite::before {
+        content: "";
+        background-image: url(../icons/sprite.png);
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .contacts::before {
+        background-position: 0px -33px;
+      }
+
+      .blog::before {
+        background-position: -17px 0px;
+      }
+
+      .portfolio::before {
+        background-position: 0px -14px;
+      }
+      .about-us:before {
+        background-position: -16px -32px;
+      }
+
+      h2 {
+        color: white;
+        text-align: center;
+        font-size: 40px;
+      }
+      body {
+        background-color: #808080;
+      }
+      .home::before {
+        background-position: -32px -16px;
+      }
+      .home body {
+        font-family: sans-serif;
+        background-color: #808080;
+      }
+      .menu > li {
+        display: inline-block;
+      }
+      .menu li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 200px;
+        background-color: gray;
+        position: relative;
+        float: left;
+      }
+
+      .menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 8px 12px;
+        background-color: #2d2d2d;
+        text-align: center;
+      }
+      .menu a:hover {
+        background-color: #3f6595;
+      }
+      .menu ul {
+        position: absolute;
+        left: 0px;
+        top: 100%;
+        display: none;
+        padding: 0px;
+      }
+      .menu li:hover > ul {
+        display: block;
+      }
+      .menu ul ul {
+        display: none;
+        position: absolute;
+        top: 0px;
+        left: 100%;
+      }
+      .submenu a {
+        background-color: white;
+        color: #808080;
+        display: block;
+        border-left: solid 3px transparent;
+      }
+      .submenu a:hover {
+        background-color: #c6c6c6;
+        border-left: solid #3f6595 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Многоуровневое горизонтальное меню</h2>
+    <div class="content">
+      <ul class="menu">
+        <li>
+          <a class="home sprite" href="">Главная</a>
+          <ul class="submenu">
+            <li><a href="">Подменю1</a></li>
+            <li><a href="">Подменю2</a></li>
+            <li><a href="">Подменю3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="about-us sprite" href="">О нас</a>
+          <ul class="submenu">
+            <li><a href="">Примечательные факты</a></li>
+            <li><a href="">Наши достижения</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="portfolio sprite" href="">Портфолио</a>
+          <ul class="submenu">
+            <li><a href="">Презентация</a></li>
+            <li>
+              <a href="">Галерея</a>
+              <ul class="submenu">
+                <li><a href="">Фото1</a></li>
+                <li><a href="">Фото2</a></li>
+                <li><a href="">Фото3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a class="blog sprite" href="">Блог</a>
+          <ul class="submenu">
+            <li>
+              <a href="">Видеоблог</a>
+              <ul>
+                <li><a href="">Подкаст</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a class="contacts sprite" href="">Контакты</a>
+          <ul class="submenu">
+            <li><a href="">Директор</a></li>
+            <li><a href="">Зам. директора</a></li>
+            <li>
+              <a href="">Отдел маркетинга</a>
+              <ul>
+                <li><a href="">Администратор 1</a></li>
+                <li><a href="">Администратор 2</a></li>
+              </ul>
+            </li>
+            <li><a href="">Отдел продаж</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="empty-box"></div>
+    </div>
+  </body>
+</html>

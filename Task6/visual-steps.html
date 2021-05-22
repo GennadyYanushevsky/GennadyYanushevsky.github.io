@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>visual-steps2</title>
+    <style>
+      .content {
+        width: 420px;
+        margin: 3% auto;
+      }
+      .step__item {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        background-color: lightgray;
+        font-size: 20px;
+        border-radius: 50%;
+        text-align: center;
+        vertical-align: middle;
+        border: solid 2px lightgray;
+      }
+      .steps__list li ~ li {
+        margin-left: 20px;
+      }
+      .content ul {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+      .step__item::before {
+        border-bottom: 2px solid lightgray;
+        content: "";
+        display: block;
+        position: relative;
+        width: 100%;
+        top: 50%;
+        left: 42px;
+        z-index: -1;
+      }
+      .step_passed {
+        background-color: lightgreen;
+        color: white;
+      }
+
+      .step_active {
+        background-color: violet;
+        color: white;
+      }
+      .step__item:last-child::before {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <ul class="steps__list">
+        <li class="step__item step_passed">1</li>
+        <li class="step__item step_passed">2</li>
+        <li class="step__item step_passed">3</li>
+        <li class="step__item step_active">4</li>
+        <li class="step__item">5</li>
+      </ul>
+    </div>
+  </body>
+</html>
