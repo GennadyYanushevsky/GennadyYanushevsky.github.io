@@ -37,7 +37,7 @@ body {
 
 .search-text {
   padding: 5px 25px;
-  margin-left: 253px;
+  margin-left: 20px;
   border: solid 1px transparent;
   outline: none;
   background: none;
@@ -157,23 +157,38 @@ body {
 
 .header__logo {
   margin-bottom: 10px;
+  max-width: 360px;
+  object-fit: cover;
+  
+  
 }
 
 .header__logo img {
   margin-top: 15px;
+  width: 100%;
+  border: solid 1px transparent;
+  
 }
 
-.header__logo a {
-  font-size: 60px;
-  color: #323232;
-  font-family: "Roboto", sans-serif;
-  margin-top: -20px;
+
+.header__btn-menu {
+  display: none;
+ 
 }
 
-.header__logo a:hover {
-  color: #80c8ca;
-  text-shadow: 3px 3px 15px gray;
+.header__logo img:hover {
+  box-shadow: 5px 5px 30px rgb(184, 184, 184);
+  border-radius: 14px;
+  
 }
+
+.header__logo img:active {
+  border: solid 1px #80c8ca;
+  box-shadow: 5px 5px 30px #80c8ca;
+}
+
+
+
 .header__content-inner {
   display: flex;
   justify-content: space-between;
@@ -190,6 +205,10 @@ body {
 
 .menu a:hover {
   border: solid 1px #80c8ca;
+}
+
+.menu a:active {
+ box-shadow: 5px 5px 30px rgb(184, 184, 184);
 }
 
 .menu li ~ li {
@@ -749,6 +768,10 @@ body {
   color: #212020;
 }
 
+.youtube-icon:active:before {
+  box-shadow: 5px 5px 15px rgb(184, 184, 184);
+}
+
 .facebook-icon::before {
   content: "\f09a";
   font-family: "icomoon";
@@ -760,6 +783,10 @@ body {
 }
 .facebook-icon:hover:before {
   color: #212020;
+}
+
+.facebook-icon:active:before {
+  box-shadow: 5px 5px 15px rgb(184, 184, 184);
 }
 
 .telegram-icon::before {
@@ -776,6 +803,10 @@ body {
   color: #212020;
 }
 
+.telegram-icon:active:before {
+  box-shadow: 5px 5px 15px rgb(184, 184, 184);
+}
+
 .vk-icon::before {
   content: "\f189";
   position: absolute;
@@ -788,6 +819,10 @@ body {
 
 .vk-icon:hover:before {
   color: #212020;
+}
+
+.vk-icon:active:before {
+  box-shadow: 5px 5px 15px rgb(184, 184, 184);
 }
 
 .instagram-icon::before {
@@ -804,6 +839,10 @@ body {
   color: #212020;
 }
 
+.instagram-icon:active:before {
+  box-shadow: 5px 5px 15px rgb(184, 184, 184);
+}
+
 .main__text {
   font-family: "Roboto", sans-serif;
 }
@@ -815,7 +854,7 @@ body {
   text-align: center;
   letter-spacing: 0.5px;
 }
-/*                                                                     ФУТЕР*/
+/*                                                  ФУТЕР*/
 .footer {
   margin-top: auto;
 }
@@ -939,6 +978,8 @@ body {
   background-color: #e6e6e6;
 }
 
+/*                                                                КАРТОЧКА ТОВАРА*/
+
 .rating-wrapper {
   position: absolute;
   bottom: 10px;
@@ -1018,7 +1059,7 @@ body {
   font-size: 14px;
   color: rgb(255, 194, 25);
 }
-/*                                                                КАРТОЧКА ТОВАРА*/
+
 .main-description__box {
   display: flex;
   justify-content: space-between;
@@ -1220,4 +1261,85 @@ body {
 }
 .description__slider-inner .slick-disabled:before {
   color: #282828;
+}
+
+/*                                    МЕДИА ЗАПРОСЫ*/
+
+@media all and (max-width: 1000px) {
+  .header__btn {
+    display: block;
+    float: none;
+    text-align: center;
+  }
+  
+
+  .header__btn-menu {
+    display: block;
+    font-size: 50px;
+   
+  }
+
+  .menu ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 70px;
+    z-index: 50;
+  }
+
+  .menu li {
+    display: block;
+    text-align: center;
+  }
+
+
+  .menu li ~ li {
+    padding-left: 0;
+  }
+
+  .menu a {
+    display: block;
+    background-color: #80c8ca;
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+  
+  } 
+
+  .header__btn:before {
+    display: none;
+  }
+  .header__contacts {
+    text-align: center;
+  }
+
+  @media all and (min-width: 1000px) {
+    .menu ul {
+      display: block;
+    }
+  }
+
+@media all and (max-width: 615px) {
+  .search-text {
+    display: inline-block;
+    width: 85%;
+    margin-bottom: 10px;
+    margin-right: 16px;
+  }
+
+  .search-btn::before {
+    left: -40px;
+  }
+
+  .header__email {
+    padding-right: 30px;
+  }
+
+  @media all and (max-width: 400px) {
+    .header__btn:before {
+      display: block;
+    }
+  }
+
+
 }
