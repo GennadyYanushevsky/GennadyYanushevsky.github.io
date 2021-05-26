@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>adaptive-layout-flex</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .header__wrapper {
+        background-color: #00bfff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header__logo {
+        text-align: center;
+        font-weight: bold;
+        background-color: #808080;
+        max-width: 120px;
+        padding: 14px;
+        width: 100%;
+        border: 2px solid transparent;
+      }
+
+      .header__logo:hover {
+        border: solid 2px cyan;
+      }
+
+      .header__logo a {
+        text-decoration: none;
+        color: #fff;
+        padding: 30px;
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .header__menu-list {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+      }
+      .header__menu-list a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 16px;
+      }
+
+      .header__menu li ~ li {
+        margin-left: 20px;
+      }
+
+      .header__menu a:hover {
+        background-color: #808080;
+      }
+
+      .content__wrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .content__main-text-title {
+        padding: 10px;
+      }
+      .content__main-text-text {
+        padding: 10px;
+      }
+      .content__main-text {
+        background-color: #00ffff;
+        order: 2;
+        flex: 4 1 200px;
+      }
+
+      .content__sidebar-left {
+        background-color: #f7d445;
+        flex: 0 0 200px;
+        text-align: center;
+        order: 1;
+        font-weight: 700;
+      }
+      .content__sidebar-right {
+        background-color: #ff69b4;
+        flex: 0 0 200px;
+        text-align: center;
+        order: 3;
+        font-weight: 700;
+      }
+      .content__sidebar-left p,
+      .content__sidebar-right p {
+        margin: 0;
+        padding: 10px 0;
+      }
+
+      .footer__wrapper {
+        background-color: #90ee90;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .footer__copy {
+        padding-left: 10px;
+      }
+
+      .footer__menu-social-links {
+        display: flex;
+      }
+
+      .footer__menu-social-links li {
+        list-style: none;
+      }
+      .footer__menu-social-links li ~ li {
+        margin-left: 25px;
+      }
+      .footer__menu-social-links a {
+        color: #fff;
+        text-decoration: none;
+        padding: 15px;
+        font-weight: bold;
+      }
+
+      .footer__menu-social-links a:hover {
+        background-color: #1d7303;
+      }
+      @media all and (max-width: 768px) {
+        .header__wrapper {
+          flex-direction: column;
+        }
+
+        .header__menu-list,
+        .footer__menu-social-links {
+          justify-content: space-around;
+          padding: 0 0 10px 0;
+        }
+
+        .header__menu,
+        .footer__menu-socials {
+          width: 100%;
+        }
+        .header__menu li ~ li {
+          margin-left: 0;
+        }
+
+        .content__wrapper {
+          display: block;
+        }
+        .content__main-text {
+          width: 100%;
+        }
+
+        .content__sidebar-right {
+          float: right;
+          width: 50%;
+        }
+
+        .content__sidebar-left {
+          float: left;
+          width: 50%;
+        }
+
+        .footer__wrapper {
+          clear: both;
+          flex-direction: column;
+        }
+
+        .footer__menu-socials li ~ li {
+          margin-left: 0;
+        }
+
+        .header__logo:hover {
+          border: solid 2px transparent;
+        }
+
+        .header__menu a:hover {
+          background-color: transparent;
+        }
+        .footer__menu-social-links a:hover {
+          background-color: transparent;
+        }
+      }
+
+      @media all and (max-width: 380px) {
+        .header__menu-list,
+        .footer__menu-social-links {
+          flex-direction: column;
+          text-align: center;
+          padding: 0;
+        }
+        .header__menu-list li {
+          width: 100%;
+          padding: 10px;
+          border-top: solid 1px rgba(179, 176, 176, 0.7);
+        }
+
+        .header__menu-list li:first-child {
+          border-top: solid 1px rgba(250, 241, 241, 0.7);
+        }
+
+        .content__sidebar-right,
+        .content__sidebar-left {
+          float: none;
+          width: 100%;
+        }
+
+        .footer__menu-social-links li {
+          margin: 10px;
+          width: 100%;
+          margin-right: 30px;
+        }
+        .footer__menu-social-links li {
+          border-top: solid 1px rgba(179, 176, 176, 0.7);
+        }
+
+        .footer__menu-social-links li:first-child {
+          margin-left: -10px;
+          border-top: solid 1px rgba(250, 241, 241, 0.7);
+        }
+
+        .footer__menu-social-links li ~ li {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="header__logo">
+            <a href="#">Logo</a>
+          </div>
+          <nav class="header__menu">
+            <ul class="header__menu-list">
+              <li><a href="#">Главная</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Продукты</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="container">
+        <div class="content__wrapper">
+          <div class="content__main-text">
+            <div class="content__main-text-title">
+              <h1>Lorem ipsum dolor sit amet.</h1>
+            </div>
+            <div class="content__main-text-text">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
+                animi quia magnam natus et enim eaque ratione commodi, tenetur
+                minima ducimus? Corrupti dolores ipsam unde mollitia accusamus
+                totam? Rerum quae tempora, id quisquam dicta culpa nesciunt
+                molestiae facere nemo dignissimos beatae explicabo quasi, libero
+                ut facilis optio accusamus sed aperiam similique temporibus.
+                Voluptatem, repellendus, libero neque quidem autem omnis fuga
+                impedit cum et fugit saepe exercitationem. Quia repellat sequi
+                rem? Eum magnam ipsum officiis odit, perspiciatis, distinctio
+                corporis aut perferendis quis est incidunt, ex sint dolorem.
+                Architecto nesciunt sed voluptates ratione modi blanditiis natus
+                at ipsa explicabo delectus, soluta iusto?
+              </p>
+            </div>
+            <div class="content__main-text-title">
+              <h2>Lorem ipsum dolor sit amet.</h2>
+            </div>
+            <div class="content__main-text-text">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
+                animi quia magnam natus et enim eaque ratione commodi, tenetur
+                minima ducimus? Corrupti dolores ipsam unde mollitia accusamus
+                totam? Rerum quae tempora, id quisquam dicta culpa nesciunt
+                molestiae facere nemo dignissimos beatae explicabo quasi, libero
+                ut facilis optio accusamus sed aperiam similique temporibus.
+                Voluptatem, repellendus, libero neque quidem autem omnis fuga
+                impedit cum et fugit saepe exercitationem. Quia repellat sequi
+                rem? Eum magnam ipsum officiis odit, perspiciatis, distinctio
+                corporis aut perferendis quis est incidunt, ex sint dolorem.
+                Architecto nesciunt sed voluptates ratione modi blanditiis natus
+                at ipsa explicabo delectus, soluta iusto?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Facilis reiciendis, hic sapiente, velit eum cumque ratione quis,
+                nihil aut ad eveniet expedita magnam sed at? In facilis magni
+                nam omnis! Quos nemo incidunt, sunt possimus dignissimos nam et
+                nisi consequuntur ipsum libero voluptas quas optio repudiandae,
+                ipsa ad exercitationem accusamus cupiditate blanditiis commodi
+                error accusantium vero. Impedit nemo, expedita at accusamus et
+                facere est optio dignissimos aperiam neque minus cupiditate
+                dolorem quas possimus magnam id asperiores? Quia laboriosam,
+                reiciendis ipsa voluptatibus praesentium voluptates saepe dolore
+                non consectetur nihil quos quis esse magnam nemo molestiae
+                repellat placeat cupiditate beatae omnis sed unde fugit? Aliquid
+                debitis ipsum aperiam praesentium, consequatur totam illum
+                laborum commodi suscipit, amet consequuntur aspernatur cumque
+                perspiciatis sit? Fugit perspiciatis possimus voluptas magnam
+                nisi harum facere eveniet libero debitis itaque autem quia
+                aspernatur ad aut, recusandae laborum animi et aliquam
+                blanditiis reprehenderit perferendis mollitia illum officia!
+                Commodi similique doloremque officia totam autem exercitationem.
+                Nulla, delectus et obcaecati cumque sint distinctio culpa
+                mollitia libero autem, similique explicabo illo quibusdam aut
+                beatae quae sit? Quia aliquam illum placeat voluptatibus
+                doloribus? Atque itaque magni dolore, excepturi perferendis
+                totam sit omnis suscipit quae neque inventore doloremque,
+                doloribus praesentium! Iusto soluta fugit voluptas repellendus!
+              </p>
+            </div>
+          </div>
+
+          <div class="content__sidebar-right">
+            <p>Aside type 1</p>
+          </div>
+          <div class="content__sidebar-left">
+            <p>Aside type 2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__copy">
+            <p>&copy;Copyright 2021</p>
+          </div>
+          <nav class="footer__menu-socials">
+            <ul class="footer__menu-social-links">
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Vkontakte</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
