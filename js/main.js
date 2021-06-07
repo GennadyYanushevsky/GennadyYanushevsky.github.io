@@ -18,7 +18,7 @@ $('.news__slider-inner').slick({
     infinite:true,
     autoplay:true,
     autoplaySpeed: 5000,
-    speed:500
+    speed:500 
 
 });
 
