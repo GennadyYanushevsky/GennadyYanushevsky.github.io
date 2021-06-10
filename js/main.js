@@ -38,4 +38,11 @@ $('.header__btn-menu').on('click', function(){
     $('.menu ul').slideToggle();
 });
 
+
+let hamburger = document.querySelector(".hamburger");
+hamburger.addEventListener("click", function () {
+  hamburger.classList.toggle("is-active");
+});
+
+
 });

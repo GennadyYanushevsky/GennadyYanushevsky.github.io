@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/style-icomoon.css" />
     <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/hamburgers.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -33,6 +34,7 @@
               >
               <input type="text" class="search-text" placeholder="Поиск" />
               <a href="#" class="search-btn"></a>
+              <a href="shopping-cart.html" class="shopping-cart-icon"></a>
               <a
                 data-fancybox
                 data-src="#modal"
@@ -52,9 +54,11 @@
                 </a>
               </div>
               <nav class="menu">
-                <div class="header__btn-menu">
-                  <span class="icon-bars"></span>
-                </div>
+                <button class="header__btn-menu hamburger hamburger--emphatic">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
                 <ul>
                   <li><a href="index.html">Главная</a></li>
                   <li>
@@ -117,7 +121,10 @@
                   <p>Наличие: есть в наличии</p>
                 </div>
                 <div class="main-description__price">
-                  <p>220.00</p>
+                  <p>
+                    220.00
+                    <span class="production__item-price-byn">BYN</span>
+                  </p>
                 </div>
               </div>
               <form class="form-box__boots">
@@ -139,6 +146,15 @@
                     <option>46-UK11-30CM</option>
                     <option>47-UK11.5-30.5CM</option>
                     <option>47.5-UK12-31CM</option>
+                  </select>
+                </label>
+                <label
+                  >Количество
+                  <select>
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
                   </select>
                 </label>
               </form>
@@ -337,8 +353,19 @@
         </div>
         <div class="footer__copy">
           <div class="container">
-            <div class="copy__text">
-              <p>&copy; 2021 Все права защищены.</p>
+            <div class="copy__inner">
+              <nav class="footer__menu">
+                <ul>
+                  <li><a href="index.html">Главная</a></li>
+                  <li><a class="footer__menu-active" href="#">Продукция</a></li>
+                  <li><a href="blog.html">Блог</a></li>
+                  <li><a href="our-clients.html">Наши клиенты</a></li>
+                  <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+              </nav>
+              <div class="copy__text">
+                <p>&copy; 2021 Все права защищены.</p>
+              </div>
             </div>
           </div>
         </div>
