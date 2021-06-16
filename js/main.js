@@ -4,10 +4,7 @@ $('.slider__inner, .description__slider-inner').slick({
     prevArrow: '<button type="button" class="slick-btn  slick-prev"></button>',
     infinite:false,
     
-    
-   
-    
-    
+  
     
 
 });

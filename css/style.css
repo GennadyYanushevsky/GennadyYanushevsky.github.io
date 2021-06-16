@@ -92,6 +92,7 @@ body {
 .shopping-cart-icon:hover::before {
   transform: scale(1.1, 1.1);
   color: #cbcacb;
+  transition: all 0.3s;
 }
 
 .shopping-cart-icon:active::before {
@@ -132,6 +133,8 @@ body {
 
 .header__btn:hover::before {
   color: #80c8ca;
+  transform: scaleX(-1);
+  transition: all 0.3s;
 }
 
 .header__contacts:after {
@@ -165,8 +168,29 @@ body {
   color: #80c8ca;
 }
 
+.header__phone:hover:before {
+  color: #cbcacb;
+  animation: wiggle 0.05s alternate ease infinite;
+}
+
 .header__email:hover {
   color: #80c8ca;
+}
+
+.header__email:active,
+.header__phone:active,
+.footer__email:active,
+.footer__list .footer__phone:active,
+.footer__list .footer__address:active {
+  text-shadow: 2px 2px 15px #80c8ca;
+}
+
+.header__email:active::before,
+.header__phone:active:before,
+.footer__email:active::before,
+.footer__list .footer__phone:active::before,
+.footer__list .footer__address:active::before {
+  text-shadow: 2px 2px 15px #80c8ca;
 }
 
 .header__email {
@@ -180,6 +204,13 @@ body {
   left: 0;
   color: #80c8ca;
 }
+
+.header__email:hover::before {
+  color: #cbcacb;
+  transform: skew(-20deg);
+  text-indent: 2px;
+}
+
 /*                                                        МЕНЮ В ХЭДЕРЕ*/
 .header__content {
   padding: 34px 0px 23px;
@@ -187,6 +218,8 @@ body {
 
 .menu li {
   display: inline-block;
+  overflow: hidden;
+  list-style: outside none none;
 }
 
 .header__logo {
@@ -225,23 +258,52 @@ body {
   font-size: 16px;
   line-height: 36px;
   border: solid 1px transparent;
-  padding: 0 16px;
+  padding: 0 16px 0 12px;
   transition: all 0.4s;
+  position: relative;
+  font-weight: 500;
 }
 
-.menu a:hover {
-  border: solid 1px #80c8ca;
+.menu a:first-child {
+  margin-left: 1px;
 }
 
-.menu a:active {
-  box-shadow: 5px 5px 30px rgb(184, 184, 184);
+.menu a::after {
+  position: absolute;
+  transition: all 0.3s ease;
+  left: 100%;
+  top: 0;
+  content: attr(data-hover);
+  color: #323232;
+  white-space: nowrap;
+  padding: 0 16px 0 12px;
+}
+
+.menu a::before {
+  position: absolute;
+  transition: all 0.3s ease;
+  left: 101%;
+  display: block;
+  width: 3px;
+  height: 100%;
+  content: "";
+  background-color: #80c8ca;
+}
+
+.menu__list li:hover a,
+.menu__list .active-menu a {
+  transform: translateX(-100%);
+}
+
+.menu a:active::after {
+  color: #cbcacb;
 }
 
 .menu li ~ li {
   padding-left: 10px;
 }
 .menu .active-menu {
-  border: solid 1px #80c8ca;
+  border-left: solid 3px #80c8ca;
 }
 
 .slider__item-content {
@@ -353,7 +415,8 @@ body {
 #modal {
   display: none;
 }
-/*                                                                 СЕКЦИЯ С НОВИНКАМИ ОБУВИ*/
+/*                                              СЕКЦИЯ С НОВИНКАМИ ОБУВИ*/
+
 .new-items {
   padding: 30px 0px 30px;
 }
@@ -376,7 +439,8 @@ body {
 .blog-information__title-box,
 .client-card__title-box,
 .product-information__title-box,
-.shopping-cart-info__title-box {
+.shopping-cart-info__title-box,
+.our-partners__title-box {
   max-width: 520px;
   padding-left: 140px;
   position: relative;
@@ -389,7 +453,8 @@ body {
 .blog-information__title-box::before,
 .client-card__title-box::before,
 .product-information__title-box::before,
-.shopping-cart-info__title-box::before {
+.shopping-cart-info__title-box::before,
+.our-partners__title-box::before {
   content: "";
   position: absolute;
   width: 100px;
@@ -409,7 +474,8 @@ body {
 
 .our-clients__title-box::before,
 .blog-information__title-box::before,
-.product-information__title-box::before {
+.product-information__title-box::before,
+.our-partners__title-box::before {
   top: 11px;
 }
 
@@ -424,7 +490,9 @@ body {
 .blog-news-card__title,
 .blog-news-title__main-title,
 .product-information__title,
-.shopping-cart-info__title {
+.shopping-cart-info__title,
+.our-partners__title,
+.size-chart__info-title {
   font-size: 24px;
   font-weight: 500;
   line-height: 24px;
@@ -442,7 +510,8 @@ body {
 .client-card__text,
 .blog-news-card__text,
 .product-information__text,
-.shopping-cart-info__text {
+.shopping-cart-info__text,
+.our-partners__text {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -450,29 +519,67 @@ body {
   color: #5e5e5e;
 }
 
-.new-items__btn a,
-.news__btn a,
-.shopping-cart__btn a {
+.shopping-cart__btn,
+.new-items__btn,
+.news__btn {
   color: #373636;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.25px;
-  margin-top: 24px;
-  padding: 5px 38px;
+  position: relative;
+  overflow: hidden;
+  padding: 0 10px;
+  perspective: 280px;
+  font-family: "Roboto", sans-serif;
+}
+
+.shopping-cart__btn span,
+.new-items__btn span,
+.news__btn span {
+  display: block;
   border: solid 3px #e6e6e6;
+  padding: 10px 40px;
+  top: 0;
+  transition: 0.4s all ease;
+  transform-origin: 50% 0;
+  transform: rotateX(0deg);
+  transform-style: preserve-3d;
+  margin-top: 25px;
 }
 
-.new-items__btn a:hover,
-.news__btn a:hover,
-.shopping-cart__btn a:hover {
+.shopping-cart__btn:hover span,
+.new-items__btn:hover span,
+.news__btn:hover span {
+  transform: translate3d(0px, 0px, -60px) rotateX(90deg);
+}
+
+.shopping-cart__btn span::after,
+.new-items__btn span::after,
+.news__btn span::after {
+  content: attr(title);
+  display: block;
+  width: 100%;
+  padding: 10px 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  border: solid 3px #e6e6e6;
+  transition: 0.8s all ease;
+  transform-origin: 50% 0;
+  transform: translate3d(0px, 100%, 0) rotateX(-90deg);
+}
+
+.shopping-cart__btn:hover span::after,
+.new-items__btn:hover span::after,
+.news__btn:hover span::after {
   border: solid 3px #80c8ca;
-  transition: all 0.3s;
-  transform: rotate(360deg);
+  background-color: #fff;
 }
 
-.new-items__btn a:active,
-.news__btn a:active,
-.shopping-cart__btn a:active {
+.shopping-cart__btn:active span::after,
+.new-items__btn:active span::after,
+.news__btn:active span::after {
   box-shadow: 5px 5px 30px rgb(184, 184, 184);
 }
 
@@ -499,6 +606,10 @@ body {
   line-height: 24px;
   font-weight: 500;
   font-family: "Roboto", sans-serif;
+}
+
+.size-chart__info-title {
+  text-align: center;
 }
 
 .new-items__item-item-text {
@@ -536,10 +647,128 @@ body {
   box-shadow: 5px 5px 30px rgb(184, 184, 184);
 }
 
-/*.new-items__item:hover img {
-  transform: scale(1.1, 1.1);
-  transition: 0.3s;
-}*/
+.benefits-tips__list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.benefits-tips__img {
+  opacity: 0.5;
+  width: 100%;
+}
+.tips {
+  max-width: 100px;
+  object-fit: cover;
+  margin-left: 20px;
+}
+.tips:first-child {
+  margin-left: 0;
+}
+/*                                            ВСПЛЫВАЮЩИЕ ОКНА НА ПРЕИМУЩЕСТВА*/
+.benefits-tips__easy-order,
+.benefits-tips__easy-choose,
+.benefits-tips__easy-pay,
+.benefits-tips__easy-get,
+.benefits-tips__easy-give {
+  position: relative;
+}
+
+.benefits-tips__easy-order::after {
+  content: "Легко заказать";
+}
+
+.benefits-tips__easy-choose::after {
+  content: "Легко выбрать";
+}
+
+.benefits-tips__easy-pay::after {
+  content: "Легко оплатить";
+}
+
+.benefits-tips__easy-get::after {
+  content: "Бесплатная доставка по Беларуси";
+}
+
+.benefits-tips__easy-give::after {
+  content: "Отличный подарок";
+}
+
+.benefits-tips__easy-order::after,
+.benefits-tips__easy-choose::after,
+.benefits-tips__easy-pay::after,
+.benefits-tips__easy-get::after,
+.benefits-tips__easy-give::after {
+  display: inline;
+  position: absolute;
+  top: 22px;
+  left: 60px;
+  opacity: 0;
+  width: 80px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5em;
+  padding: 0.5em 0.8em;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  pointer-events: none;
+  transition: opacity 250ms, top 350ms;
+  font-family: "Roboto", sans-serif;
+}
+
+.benefits-tips__easy-order::before,
+.benefits-tips__easy-choose::before,
+.benefits-tips__easy-pay::before,
+.benefits-tips__easy-get::before,
+.benefits-tips__easy-give::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 70px;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border: solid transparent 5px;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 250ms, top 350ms;
+}
+
+.benefits-tips__easy-order:hover,
+.benefits-tips__easy-choose:hover,
+.benefits-tips__easy-pay:hover,
+.benefits-tips__easy-get:hover,
+.benefits-tips__easy-give:hover {
+  z-index: 2;
+  cursor: help;
+}
+.benefits-tips__easy-order:hover::after,
+.benefits-tips__easy-choose:hover::after,
+.benefits-tips__easy-pay:hover::after,
+.benefits-tips__easy-get:hover::after,
+.benefits-tips__easy-give:hover::after,
+.benefits-tips__easy-order:hover::before,
+.benefits-tips__easy-choose:hover::before,
+.benefits-tips__easy-pay:hover::before,
+.benefits-tips__easy-get:hover::before,
+.benefits-tips__easy-give:hover::before {
+  opacity: 1;
+}
+
+.benefits-tips__easy-order:hover::after,
+.benefits-tips__easy-choose:hover::after,
+.benefits-tips__easy-pay:hover::after,
+.benefits-tips__easy-get:hover::after,
+.benefits-tips__easy-give:hover::after {
+  top: 100px;
+}
+.benefits-tips__easy-order:hover::before,
+.benefits-tips__easy-choose:hover::before,
+.benefits-tips__easy-pay:hover::before,
+.benefits-tips__easy-get:hover::before,
+.benefits-tips__easy-give:hover::before {
+  top: 90px;
+}
 
 /*                                                                СЕКЦИЯ С ПРЕИМУЩЕСТВАМИ*/
 .advantages {
@@ -601,7 +830,6 @@ body {
 /*                                                                СЕКЦИЯ С НОВОСТЯМИ*/
 .news {
   padding: 55px 0 110px;
-  background-color: #f9f9f9;
 }
 
 .news__inner {
@@ -926,7 +1154,7 @@ body {
 
 .main__text {
   font-family: "Roboto", sans-serif;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .main__title {
@@ -936,6 +1164,37 @@ body {
   text-align: center;
   letter-spacing: 0.5px;
 }
+
+.our-partners {
+  margin-bottom: -45px;
+}
+
+.our-partners__top {
+  margin-bottom: -20px;
+}
+
+.our-partners__clubs {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px 0;
+}
+
+.our-partners__club {
+  max-width: 100px;
+  object-fit: cover;
+}
+
+.our-partners-img {
+  filter: grayscale(100%);
+  cursor: pointer;
+  width: 100%;
+}
+
+.our-partners-img:hover {
+  filter: grayscale(0);
+  cursor: zoom-in;
+}
+
 /*                                                  ФУТЕР*/
 .footer {
   margin-top: auto;
@@ -1026,9 +1285,25 @@ body {
   left: 3px;
 }
 
+.footer__list .footer__phone:hover::before {
+  color: #cbcacb;
+  animation: wiggle 0.05s alternate ease infinite;
+}
+
+.footer__email:hover::before {
+  color: #cbcacb;
+  transform: skew(-20deg);
+  text-indent: 2px;
+}
+
 .footer__list .footer__address::before {
   content: "\f041";
   left: 3px;
+}
+
+.footer__list .footer__address:hover::before {
+  animation: bouncetop 0.3s alternate ease infinite;
+  color: #cbcacb;
 }
 
 .footer__copy {
@@ -1072,7 +1347,7 @@ body {
 .footer__menu-active {
   border-bottom: solid 1px #80c8ca;
 }
-
+/*                                                    МОДАЛЬНОЕ ОКНО*/
 #modal {
   width: 300px;
 }
@@ -1104,7 +1379,7 @@ body {
   color: #80c8ca;
 }
 
-/*                                                                КАРТОЧКА ТОВАРА*/
+/*                                                        КАРТОЧКА ТОВАРА*/
 
 .rating-wrapper {
   position: absolute;
@@ -1296,11 +1571,6 @@ body {
   color: #373636;
 }
 
-.main-description__article .default-btn:after,
-.product-feedback__box .default-btn::after {
-  color: #fff;
-}
-
 .main-description__article .default-btn:hover,
 .product-feedback__box .default-btn:hover {
   color: #80c8ca;
@@ -1310,6 +1580,24 @@ body {
   display: flex;
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
+}
+
+.size-chart__info {
+  max-width: 800px;
+  margin: 60px auto 0;
+  object-fit: cover;
+}
+
+.size-chart__img {
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.size-chart__img:hover {
+  opacity: 1;
+  transition: all 0.3s;
+  cursor: zoom-in;
 }
 
 .product-feedback {
@@ -1347,14 +1635,14 @@ body {
 
 .product-feedback__desc {
   max-width: 400px;
-  padding: 10px;
+  padding: 13px;
 }
 
 .product-feedback__box .default-btn {
   float: right;
 }
 
-/*                                                          СЛАЙДЕР В КАРТОЧКЕ*/
+/*                                               СЛАЙДЕР В КАРТОЧКЕ*/
 
 .description__slider {
   padding: 20px;
@@ -1412,14 +1700,16 @@ body {
   max-height: 510px;
   border: solid 1px transparent;
   border-radius: 30px;
+  overflow: hidden;
 }
 
 .gallery__img:hover {
   filter: saturate(150%);
   border: solid 1px rgb(184, 184, 184);
   box-shadow: 3px 3px #fff, 5px 5px 15px rgb(184, 184, 184);
-  transition: all 0.5s;
-  transform: scale(0.9, 0.9);
+  transition: all 0.4s;
+  transform: scale(1.03, 1.03);
+  border-radius: 50%;
 }
 
 .gallery__img:active {
@@ -1518,18 +1808,28 @@ body {
 .blog-news-box__item-title {
   margin-left: 10px;
   text-align: center;
+  padding: 0 10px;
 }
 
 .blog-news-box__links {
   margin-top: 10px;
   margin-left: 10px;
+  padding: 0 10px;
+}
+
+.blog-news-box__item:hover .blog-news-box__links,
+.blog-news-box__item:hover .blog-news-box__date,
+.blog-news-box__item:hover .blog-news-box__theme {
+  color: #212020;
+  transition: all 0.3s;
 }
 
 .blog-news-box__item {
   max-width: 550px;
   border: solid 1px transparent;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .blog-news-box__item img {
@@ -1541,11 +1841,17 @@ body {
   transition: all 0.3s;
 }
 
+.blog-news-box__item:hover .blog-news-box__item-title {
+  color: #fff;
+}
+
 .blog-news-box__item:hover {
   border: solid 1px #e6e6e6;
   box-shadow: 0px 5px 15.36px 0.64px rgba(128, 127, 127, 0.13);
-  transition: all 0.4s;
-  transform: scale(1.05, 1.05);
+  background-color: #80c8ca;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  transition: all 0.3s;
 }
 
 .blog-news-box__item:active {
@@ -1564,8 +1870,8 @@ body {
 }
 
 .blog-news-slider {
-  margin-top: -50px;
-  margin-bottom: 50px;
+  margin-top: -65px;
+  margin-bottom: -10px;
   margin-left: 65px;
 }
 
@@ -1685,7 +1991,8 @@ body {
 /*                                       СТРАНИЦА ПРОДУКЦИЯ*/
 
 .production .pagination {
-  margin-top: 100px;
+  margin-top: 55px;
+  margin-bottom: 10px;
 }
 .production__item-price {
   text-align: left;
@@ -1707,6 +2014,27 @@ body {
   border: solid 1px #e6e6e6;
   box-shadow: 0px 7px 24.3px 2.7px rgba(91, 89, 89, 0.14);
   border-radius: 10px;
+  position: relative;
+}
+
+.production__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: block;
+  content: "";
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+}
+
+.production__item:hover::before {
+  animation: shine 0.7s;
 }
 
 .production__item-title {
@@ -1795,7 +2123,7 @@ body {
 }
 
 .aside__price-range::before {
-  content: "0";
+  content: "100BYN";
   left: 0;
 }
 
@@ -1935,7 +2263,6 @@ body {
 .aside__price-range {
   margin-bottom: 8px;
   outline: none;
-
   border: solid 1px #e6e6e6;
 }
 
@@ -1955,9 +2282,52 @@ body {
   margin-bottom: -4px;
 }
 
+/*                                            KEY ФРЭЙМЫ*/
+
+@keyframes wiggle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes bouncetop {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes shine {
+  100% {
+    left: 80%;
+  }
+}
+
 /*                                            МЕДИА ЗАПРОСЫ*/
+
 /*                                                1150px*/
 @media all and (max-width: 1150px) {
+  .benefits-tips__easy-order::after,
+  .benefits-tips__easy-choose::after,
+  .benefits-tips__easy-pay::after,
+  .benefits-tips__easy-get::after,
+  .benefits-tips__easy-give::after {
+    left: 0;
+  }
+
+  .benefits-tips__easy-order::before,
+  .benefits-tips__easy-choose::before,
+  .benefits-tips__easy-pay::before,
+  .benefits-tips__easy-get::before,
+  .benefits-tips__easy-give::before {
+    left: 10px;
+  }
+
   .production__items {
     grid-template-columns: 1fr 1fr;
   }
@@ -2049,6 +2419,7 @@ body {
   }
   .footer__payment-systems {
     margin: 0;
+    margin-top: -10px;
   }
 
   .footer__payment-systems li ~ li {
@@ -2103,6 +2474,29 @@ body {
 }
 /*                                                      1000px*/
 @media all and (max-width: 1000px) {
+  .new-items__item:first-child {
+    margin-top: -30px;
+  }
+
+  .new-items__btn,
+  .news__btn {
+    margin-top: -20px;
+  }
+
+  .shopping-cart-info__top,
+  .new-items__top,
+  .news__top {
+    text-align: center;
+  }
+
+  .menu__list li:hover a,
+  .menu__list .active-menu a {
+    transform: none;
+  }
+
+  .news__title {
+    margin-top: -30px;
+  }
   .hamburger-box {
     width: 35px;
     height: 40px;
@@ -2216,7 +2610,11 @@ body {
   }
 
   .new-items__top,
-  .news__top {
+  .news__top,
+  .our-partners__top,
+  .shopping-cart-info__top,
+  .our-clients__top,
+  .blog-information__top {
     display: block;
   }
   .form {
@@ -2226,7 +2624,12 @@ body {
   .new-items__title-box,
   .form__title-box,
   .news__title-box,
-  .description-item__title-box {
+  .description-item__title-box,
+  .our-partners__title-box,
+  .product-information__title-box,
+  .shopping-cart-info__title-box,
+  .our-clients__title-box,
+  .blog-information__title-box {
     padding-left: 0;
     text-align: center;
     margin: 0 auto 30px;
@@ -2235,13 +2638,34 @@ body {
   .new-items__title-box::before,
   .form__title-box::before,
   .news__title-box::before,
-  .description-item__title-box::before {
+  .description-item__title-box::before,
+  .our-partners__title-box::before,
+  .product-information__title-box::before,
+  .shopping-cart-info__title-box::before,
+  .our-clients__title-box::before,
+  .blog-information__title-box::before {
     display: none;
   }
 
-  .new-items__btn,
-  .news__btn {
-    text-align: center;
+  .product-information__top {
+    margin-bottom: -50px;
+    margin-top: -5px;
+  }
+
+  .shopping-cart-info__title-box {
+    margin-bottom: -15px;
+  }
+
+  .form__title {
+    margin-top: -40px;
+  }
+
+  .form__text {
+    margin-bottom: -40px;
+  }
+
+  .our-clients__text {
+    margin-bottom: -35px;
   }
 
   .header__btn {
@@ -2362,9 +2786,28 @@ body {
 
 /*                                                   650px*/
 @media all and (max-width: 650px) {
-  .shopping-cart-info__top {
-    flex-direction: column;
-    align-items: center;
+  .benefits-tips__easy-order:hover,
+  .benefits-tips__easy-choose:hover,
+  .benefits-tips__easy-pay:hover,
+  .benefits-tips__easy-get:hover,
+  .benefits-tips__easy-give:hover {
+    cursor: default;
+  }
+
+  .benefits-tips__easy-order::after,
+  .benefits-tips__easy-choose::after,
+  .benefits-tips__easy-pay::after,
+  .benefits-tips__easy-get::after,
+  .benefits-tips__easy-give::after {
+    display: none;
+  }
+
+  .benefits-tips__easy-order::before,
+  .benefits-tips__easy-choose::before,
+  .benefits-tips__easy-pay::before,
+  .benefits-tips__easy-get::before,
+  .benefits-tips__easy-give::before {
+    display: none;
   }
 
   .shopping-cart-icon::before {
@@ -2393,6 +2836,64 @@ body {
 }
 /*                                                    500px*/
 @media all and (max-width: 500px) {
+  .gallery__img:hover {
+    border-radius: 30px;
+  }
+
+  .main__text {
+    margin-top: 10px;
+  }
+
+  .news__title,
+  .form__title {
+    margin-top: -40px;
+  }
+
+  .product-feedback__box-title {
+    margin-top: -10px;
+  }
+  .new-items__title,
+  .product-information__title,
+  .description-item__title,
+  .main-description__article-title {
+    margin-top: -25px;
+  }
+
+  .shopping-cart-info__title,
+  .our-clients__title {
+    margin-top: -15px;
+  }
+
+  .news__text,
+  .new-items__text,
+  .our-clients__text {
+    margin-bottom: -25px;
+  }
+
+  .form__text {
+    margin-bottom: -40px;
+  }
+
+  .main-description__warning {
+    margin-top: 20px;
+  }
+  .main-description__available {
+    margin-top: -15px;
+  }
+
+  .client-card__title-box::before {
+    top: 32px;
+  }
+
+  .our-partners__club {
+    max-width: 80px;
+    margin-bottom: -20px;
+  }
+
+  .our-partners {
+    margin-top: -35px;
+  }
+
   .youtube-icon:before,
   .facebook-icon::before,
   .telegram-icon::before,
@@ -2446,7 +2947,13 @@ body {
   .blog-news-box__item-title,
   .client-card__title,
   .blog-news-card__title,
-  .blog-news-title__main-title {
+  .blog-news-title__main-title,
+  .product-information__title,
+  .main-description__article-title,
+  .product-feedback__box-title,
+  .product-feedback__desc-title,
+  .shopping-cart-info__title,
+  .size-chart__info-title {
     font-size: 20px;
   }
 
@@ -2473,6 +2980,10 @@ body {
 
   .news__blog-text {
     margin-top: -20px;
+  }
+
+  .our-clients__text {
+    margin-bottom: -55px;
   }
 
   .news__images {

@@ -4,6 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="images/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#909090" />
+    <meta name="theme-color" content="#ffffff" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
@@ -62,12 +88,27 @@
                     <span class="hamburger-inner"></span>
                   </span>
                 </button>
-                <ul>
-                  <li><a class="active-menu" href="index.html">Главная</a></li>
-                  <li><a href="products.html">Продукция</a></li>
-                  <li><a href="blog.html">Блог</a></li>
-                  <li><a href="our-clients.html">Наши клиенты</a></li>
-                  <li><a href="contacts.html">Контакты</a></li>
+                <ul class="menu__list">
+                  <li>
+                    <a
+                      class="active-menu"
+                      href="index.html"
+                      data-hover="Главная"
+                      >Главная</a
+                    >
+                  </li>
+                  <li>
+                    <a href="products.html" data-hover="Продукция">Продукция</a>
+                  </li>
+                  <li><a href="blog.html" data-hover="Блог">Блог</a></li>
+                  <li>
+                    <a href="our-clients.html" data-hover="Наши клиенты"
+                      >Наши клиенты</a
+                    >
+                  </li>
+                  <li>
+                    <a href="contacts.html" data-hover="Контакты">Контакты</a>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -79,38 +120,26 @@
           <div class="slider__inner">
             <div class="slider__item">
               <img src="images/nike-shoes101.jpg" alt="nike" />
-              <a href="products.html" class="slider__btn default-btn">
-                Подробнее
-              </a>
             </div>
 
             <div class="slider__item">
               <img src="images/nike-shoes202.jpg" alt="nike" />
-              <a href="products.html" class="slider__btn default-btn">
-                Подробнее
-              </a>
             </div>
             <div class="slider__item">
               <img src="images/nike-shoes303.jpg" alt="nike" />
-              <a href="products.html" class="slider__btn default-btn">
-                Подробнее
-              </a>
             </div>
             <div class="slider__item">
               <img src="images/nike-shoes404.jpg" alt="nike" />
-              <a href="products.html" class="slider__btn default-btn">
-                Подробнее
-              </a>
             </div>
             <div class="slider__item">
               <img src="images/nike-shoes505.jpg" alt="nike" />
-              <a href="products.html" class="slider__btn default-btn">
-                Подробнее
-              </a>
             </div>
           </div>
         </div>
       </div>
+
+      <!--БЛОК НОВИНОК-->
+
       <div class="new-items">
         <div class="container">
           <div class="new-items__top">
@@ -126,8 +155,10 @@
                 </p>
               </div>
             </div>
-            <div class="new-items__btn">
-              <a href="products.html">Показать все модели</a>
+            <div>
+              <a class="new-items__btn" href="products.html">
+                <span title="Показать все модели">Показать все модели</span>
+              </a>
             </div>
           </div>
 
@@ -280,6 +311,50 @@
         </div>
       </div>
 
+      <div class="benefits-tips">
+        <div class="container">
+          <div class="benefits-tips__list">
+            <div class="benefits-tips__easy-order tips">
+              <img
+                class="benefits-tips__img easy-order"
+                src="images/easy-order.png"
+                alt=""
+              />
+            </div>
+            <div class="benefits-tips__easy-choose tips">
+              <img
+                class="benefits-tips__img easy-choose"
+                src="images/easy-choose.png"
+                alt=""
+              />
+            </div>
+            <div class="benefits-tips__easy-pay tips">
+              <img
+                class="benefits-tips__img easy-pay"
+                src="images/easy-pay.png"
+                alt=""
+              />
+            </div>
+            <div class="benefits-tips__easy-get tips">
+              <img
+                class="benefits-tips__img easy-get"
+                src="images/easy-get.png"
+                alt=""
+              />
+            </div>
+            <div class="benefits-tips__easy-give tips">
+              <img
+                class="benefits-tips__img easy-give"
+                src="images/easy-give.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--БЛОК ПРЕИМУЩЕСТВА-->
+
       <div class="advantages">
         <div class="container">
           <div class="advantages__inner">
@@ -317,6 +392,8 @@
         </div>
       </div>
 
+      <!--БЛОК НОВОСТЕЙ-->
+
       <div class="news">
         <div class="container">
           <div class="news__top">
@@ -332,8 +409,10 @@
                 </p>
               </div>
             </div>
-            <div class="news__btn">
-              <a href="blog.html">Открыть все новости</a>
+            <div>
+              <a class="news__btn" href="blog.html">
+                <span title="Открыть все новости">Открыть все новости</span></a
+              >
             </div>
           </div>
           <div class="news__inner">
@@ -526,6 +605,8 @@
         </div>
       </div>
 
+      <!--КНОПКИ СОЦИАЛОК-->
+
       <div class="container">
         <div class="social-media-btns">
           <a
@@ -561,7 +642,96 @@
         </div>
       </div>
 
-      <section class="main__text">
+      <!--БЛОК НАШИ ПАРТНЕРЫ-->
+
+      <div class="our-partners">
+        <div class="container">
+          <div class="our-partners__top">
+            <div class="our-partners__title-box">
+              <div class="our-partners__title">
+                <p>Наши партнёры</p>
+              </div>
+              <div class="our-partners__text">
+                <p>
+                  Мы являемся официальными дистрибьюторами продукции в топ-клубы
+                  Чемпионата Беларуси
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="our-partners__clubs">
+            <div class="our-partners__club">
+              <a
+                href="images/FC-Minsk-logo1.png"
+                data-fancybox
+                data-caption="Футбольный клуб Минск"
+              >
+                <img
+                  class="our-partners-img"
+                  src="images/Minsk-logo.png"
+                  alt="Минск"
+                />
+              </a>
+            </div>
+            <div class="our-partners__club">
+              <a
+                href="images/FC-Vitebsk-HD-Logo1.png"
+                data-fancybox
+                data-caption="Футбольный клуб Витебск"
+              >
+                <img
+                  class="our-partners-img"
+                  src="images/Vitebsk-logo.png"
+                  alt="Витебск"
+                />
+              </a>
+            </div>
+            <div class="our-partners__club">
+              <a
+                href="images/FC-Saligorsk-logo1.png"
+                data-fancybox
+                data-caption="Футбольный клуб Шахтёр"
+              >
+                <img
+                  class="our-partners-img"
+                  src="images/Saligorsk-logo.png"
+                  alt="Шахтёр"
+                />
+              </a>
+            </div>
+            <div class="our-partners__club">
+              <a
+                href="images/FC-Torpedo-logo1.png"
+                data-fancybox
+                data-caption="Футбольный клуб Торпедо"
+              >
+                <img
+                  class="our-partners-img"
+                  src="images/Torpedo-logo.png"
+                  alt="Торпедо"
+                />
+              </a>
+            </div>
+            <div class="our-partners__club">
+              <a
+                href="images/FC-Dynamo-Brest-logo1.png"
+                data-fancybox
+                data-caption="Футбольный клуб Динамо-Брест"
+              >
+                <img
+                  class="our-partners-img"
+                  src="images/Dynamo-Brest-logo.png"
+                  alt="Динамо Брест"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--БЛОК С ТЕКСТОМ-->
+
+      <div class="main__text">
         <div class="container">
           <h3 class="main__title">Футбольный магазин - GoalShop.by</h3>
           <p>
@@ -639,11 +809,11 @@
             фетиш многих болельщиков. Любой болельщик футбола хотел бы иметь
             среди своих вещей футболку любимой команды или любимого игрока,
             поэтому руководство команды выпускают футболки в виде сувенирной
-            продукции и за счет их продажи обеспечивают дополнительных доход
+            продукции и за счет их продажи обеспечивают дополнительный доход
             клуба.
           </p>
         </div>
-      </section>
+      </div>
 
       <footer class="footer">
         <div class="footer__content">
@@ -675,7 +845,10 @@
                     >
                   </li>
                   <li>
-                    <a href="mailto:goalshop@mail.ru" target="_blank"
+                    <a
+                      class="footer__email"
+                      href="mailto:goalshop@mail.ru"
+                      target="_blank"
                       >goalshop@mail.ru</a
                     >
                   </li>
@@ -689,20 +862,25 @@
                   </li>
                 </ul>
               </div>
+
+              <!--БЛОК ПЛАТЕЖНЫХ СИСТЕМ-->
+
               <div class="footer__payment-systems">
                 <ul>
                   <li>
-                    <img src="images/logo-mastercard.png" alt="" />
+                    <img src="images/logo-mastercard.png" alt="Mastercard" />
                   </li>
                   <li>
-                    <img src="images/logo-maestro1.jpg" alt="" />
-                  </li>
-                  <li><img src="images/logo-visa1.png" alt="" /></li>
-                  <li>
-                    <img src="images/logo-belkart1.png" alt="" />
+                    <img src="images/logo-maestro1.jpg" alt="Maestro" />
                   </li>
                   <li>
-                    <img src="images/logo-abff-1.jpg" alt="" />
+                    <img src="images/logo-visa1.png" alt="Visa" />
+                  </li>
+                  <li>
+                    <img src="images/logo-belkart1.png" alt="Belkart" />
+                  </li>
+                  <li>
+                    <img src="images/logo-abff-1.jpg" alt="ABFF" />
                   </li>
                 </ul>
               </div>
