@@ -954,7 +954,7 @@ body {
   color: #5e5e5e;
   padding: 0 10px;
 }
-/*                                                                ФОРМА СТРАНИЦА КОНТАКТЫ*/
+/*                                               ФОРМА СТРАНИЦА КОНТАКТЫ*/
 .form {
   padding-top: 30px;
   padding-bottom: 50px;
@@ -1805,6 +1805,10 @@ body {
   margin-top: 60px;
 }
 
+.blog-news-box__item {
+  margin-top: -30px;
+}
+
 .blog-news-box__item-title {
   margin-left: 10px;
   text-align: center;
@@ -2474,6 +2478,10 @@ body {
 }
 /*                                                      1000px*/
 @media all and (max-width: 1000px) {
+  .description-item__top {
+    margin-bottom: 10px;
+  }
+
   .new-items__item:first-child {
     margin-top: -30px;
   }
@@ -2731,6 +2739,18 @@ body {
 }
 /*                                                  900px*/
 @media all and (max-width: 900px) {
+  .blog-news-box__items {
+    margin-top: 0;
+  }
+
+  .blog-news-box__item {
+    margin-bottom: 50px;
+  }
+
+  .blog-news-box__item:first-child {
+    margin-top: 0;
+  }
+
   .blog-news-slider {
     margin-left: 35px;
   }
@@ -2855,7 +2875,9 @@ body {
   .new-items__title,
   .product-information__title,
   .description-item__title,
-  .main-description__article-title {
+  .main-description__article-title,
+  .blog-information__title,
+  .blog-news-card__title {
     margin-top: -25px;
   }
 
@@ -2953,7 +2975,8 @@ body {
   .product-feedback__box-title,
   .product-feedback__desc-title,
   .shopping-cart-info__title,
-  .size-chart__info-title {
+  .size-chart__info-title,
+  .blog-news-card__title {
     font-size: 20px;
   }
 
